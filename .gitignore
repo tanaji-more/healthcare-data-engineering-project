@@ -1,0 +1,15 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables
+.env
+
+# dbt artifacts (we’ll generate later)
+target/
+dbt_packages/
+logs/
