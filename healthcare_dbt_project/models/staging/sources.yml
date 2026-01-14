@@ -6,5 +6,22 @@ sources:
     schema: raw
     tables:
       - name: claims_csv_raw
+        config:
+          loaded_at_field: LOAD_TIME
+        
       - name: patients_api_raw
+        description: "Patient data coming from external API"
+      
+        config:
+          loaded_at_field: LOAD_TIME
+          freshness:
+            warn_after:
+              count: 24
+              period: hour
+            error_after: 
+              count: 48
+              period: hour
+              
       - name: visits_operational_raw
+        config:
+          loaded_at_field: LOAD_TIME
