@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: dim_patient
+    description: "Dimesion table contacting unique patient records"
+    columns:
+      - name: patient_id
+        description: "Unique identifier for each patiebnt"
+        tests:
+          - unique
+          - not_null
+
+      - name: gender
+        description: " Gender of pateint"
+        tests:
+          - accepted_values:
+              values: ['male', 'female', 'Male', 'Female']
+      
+  - name: fact_visits
+    description: "Fact table containing patient appointment details"
+    columns:
+      - name: appointment_id
+        description: "unique appointment identifier"
+        tests: 
+          - unique
+          - not_null
+
+      - name: patient_id
+        description: "Patient foreign key referencing dim_patient"
+        tests:
+          - not_null
+
+      - name: no_show_flag
+        description: "shows whether patient missed appointment"
+        tests:
+          - accepted_values:
+              values: ['yes', 'no', 'Yes', 'No', 'Y', 'N', 'y', 'n']
+      
+  - name: fact_claims
+    description: "Fact table containing insurance claims data"
+    columns: 
+      - name: claim_amount
+        description: "Claim amount charged"
+        tests:
+          - not_null
+      
+      - name: smoker_flag
+        description: "Whether patient is a smoker"
+        tests:
+          - accepted_values:
+              values: ['yes', 'no', 'Yes', 'No', 'Y', 'N', 'y', 'n']
