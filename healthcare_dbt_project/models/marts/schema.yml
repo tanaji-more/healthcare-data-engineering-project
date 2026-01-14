@@ -14,7 +14,8 @@ models:
         description: " Gender of pateint"
         tests:
           - accepted_values:
-              values: ['male', 'female', 'Male', 'Female']
+              arguments:
+                values: ['male', 'female', 'Male', 'Female']
       
   - name: fact_visits
     description: "Fact table containing patient appointment details"
@@ -34,7 +35,8 @@ models:
         description: "shows whether patient missed appointment"
         tests:
           - accepted_values:
-              values: ['yes', 'no', 'Yes', 'No', 'Y', 'N', 'y', 'n']
+              arguments:
+                values: ['yes', 'no', 'Yes', 'No', 'Y', 'N', 'y', 'n']
       
   - name: fact_claims
     description: "Fact table containing insurance claims data"
@@ -48,4 +50,5 @@ models:
         description: "Whether patient is a smoker"
         tests:
           - accepted_values:
-              values: ['yes', 'no', 'Yes', 'No', 'Y', 'N', 'y', 'n']
+              arguments:
+                values: ['yes', 'no', 'Yes', 'No', 'Y', 'N', 'y', 'n']
