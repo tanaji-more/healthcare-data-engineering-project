@@ -17,3 +17,5 @@ select
     No_show::string          as no_show_flag,
     load_time                  as loaded_at
 from {{ source('raw', 'visits_operational_raw') }}
+
+
