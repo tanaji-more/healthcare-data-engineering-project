@@ -1,6 +1,6 @@
 
 
--- added the dim_patient model to create a dimension table for patients
+--added the dim_patient model to create a dimension table  for patients
 
 {{ config (materialized = 'table') }}
 
