@@ -3,7 +3,6 @@
 {{ config (materialized= 'table') }}
 
 select 
-    claim_id,
     claim_amount,
     region,
     smoker_flag,
