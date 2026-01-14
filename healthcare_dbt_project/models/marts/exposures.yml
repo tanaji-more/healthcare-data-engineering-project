@@ -1,0 +1,21 @@
+# Exposure means:-  Who is using this data? For what purpose? Which dashboard or application depends on which tables?
+
+version: 2
+
+exposures:
+  - name: healthcare_analytics_dashboard
+    type: dashboard
+    maturity: high
+    url: https://your-company-dashboard-link.com
+    description: >
+      This dashboard is used by hospital management and operations teams
+      to track patient visits, appointment no-shows, and insurance claims.
+
+    depends_on:
+      - ref('dim_patient')
+      - ref('fact_visits')
+      - ref('fact_claims')
+
+    owner:
+      name: Tanaji More
+      email: tanaji.more@healthcare.com
