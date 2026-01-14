@@ -12,3 +12,4 @@ select distinct
     datediff(year, birth_date, current_date) as age,
     loaded_at 
 from {{ ref('stg_patients') }}
+where patient_id is not null
