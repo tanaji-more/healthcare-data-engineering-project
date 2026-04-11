@@ -13,7 +13,6 @@ MARTS	--> Fact & Dimension tables,
 
 <h2>Orchestration with Apache Airflow</h2>
 
-
 <i>Pipeline flow:</i>
 
 Run dbt staging models, 
